@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emberfall Duel — a card duel of the three winds</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/table.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- ============ TITLE SCREEN ============ -->
+  <section id="screen-title" class="screen">
+    <div class="title-wrap">
+      <div class="title-kicker">A DUEL OF THE THREE WINDS</div>
+      <h1 class="title-logo"><span class="el-ember-t">EMBER</span><span class="el-tide-t">FALL</span></h1>
+      <p class="title-sub">Outwit Nyx, the Rival. Spend mana, summon creatures, and burn her life to zero — before she burns yours.</p>
+      <div class="elements">
+        <div class="element-card el-ember"><span class="glyph">▲</span><b>Ember</b><i>Burn &amp; bite</i></div>
+        <div class="element-card el-tide"><span class="glyph">●</span><b>Tide</b><i>Guard &amp; mend</i></div>
+        <div class="element-card el-gale"><span class="glyph">◆</span><b>Gale</b><i>Swift &amp; draw</i></div>
+      </div>
+      <ol class="howto">
+        <li><b>Draw &amp; grow.</b> Each turn you gain 1 mana and draw a card.</li>
+        <li><b>Play cards.</b> Creatures join your row; spells strike at once.</li>
+        <li><b>Strike.</b> At the end of your turn your creatures hit Nyx — her Guards soak the blows first.</li>
+        <li><b>Win.</b> First hero to 0 life loses. Empty deck? Fatigue bites.</li>
+      </ol>
+      <button id="start-btn" class="big-btn">⚔ &nbsp;BEGIN THE DUEL</button>
+      <p class="controls">Mouse or keyboard — click a card or press <b>1–7</b> to play it · <b>E</b> end turn · <b>R</b> duel again</p>
+    </div>
+  </section>
+
+  <!-- ============ TABLE ============ -->
+  <section id="screen-table" class="screen hidden">
+    <div class="table">
+      <div class="foe-zone">
+        <div class="hero" id="hero-enemy">
+          <div class="avatar foe">N</div>
+          <div class="hero-info">
+            <div class="hero-name">Nyx, the Rival</div>
+            <div class="life-bar"><div class="life-fill"></div><span class="life-num">30 / 30</span></div>
+            <div class="mana-row"><span class="mana"></span><span class="mana-num">0/0</span><span class="deck-count" id="deck-enemy">Deck 36</span></div>
+          </div>
+        </div>
+        <div class="foe-hand-wrap">
+          <div class="foe-hand" id="hand-enemy"></div>
+          <div class="foe-count" id="enemy-count">4 cards</div>
+        </div>
+      </div>
+
+      <div class="board-row" id="board-enemy"></div>
+
+      <div class="mid-strip">
+        <div class="log" id="log"></div>
+        <div class="mid-center">
+          <div id="turn-banner" class="your-turn">TURN 1 — YOUR MOVE</div>
+          <button id="end-turn" class="end-btn">END TURN&nbsp;&nbsp;[E]</button>
+        </div>
+      </div>
+
+      <div class="board-row" id="board-player"></div>
+
+      <div class="player-zone">
+        <div class="hero" id="hero-player">
+          <div class="avatar you">Y</div>
+          <div class="hero-info">
+            <div class="hero-name">You</div>
+            <div class="life-bar"><div class="life-fill"></div><span class="life-num">30 / 30</span></div>
+            <div class="mana-row"><span class="mana"></span><span class="mana-num">0/0</span><span class="deck-count" id="deck-player">Deck 36</span></div>
+          </div>
+        </div>
+        <div class="hand-wrap">
+          <div class="hand-label">YOUR HAND — click a card or press 1–7</div>
+          <div class="hand" id="hand-player"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ END SCREEN ============ -->
+  <section id="screen-end" class="screen hidden">
+    <div id="confetti"></div>
+    <div class="end-wrap">
+      <h1 id="end-title" class="win">VICTORY</h1>
+      <p id="end-sub"></p>
+      <p id="end-stats"></p>
+      <button id="again-btn" class="big-btn">↻ &nbsp;DUEL AGAIN</button>
+      <p class="controls">or press <b>R</b></p>
+    </div>
+  </section>
+
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
